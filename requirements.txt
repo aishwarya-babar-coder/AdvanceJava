@@ -1,0 +1,170 @@
+use eclipse 2023 - 03
+use mysql connector jar 8.0.33
+use apache tomcat 10.1.52
+
+1.project name = JdbcInsertUpdateDeleteSelect
+
+    -create register table inside database with cols = name,email,password,gender,address
+    -
+            -insert data into database using hardcoded value
+      	    -insert data into database using hardcoded value with concatenation 
+            -insert data into database using placeholders
+            -update data into database using placeholders
+            -delete data into database using placeholders
+            -select all data from database
+    
+
+2.project name = FirstServletDemo
+
+    -create index.html to print "first project"
+
+3.project name = FirstServletDemo1
+
+    -project should have web.xml contains servlet mapping code
+    -create servlet with doget method and print statment "i am in doget method" console as well as on browser 
+
+4.project name = WebXmlDemo
+
+    -project should have web.xml contains servlet mapping code
+    -create servlet with service method to print statement "i am in service method" on console as well as on browser
+
+5.project name = WebAppWithoutWebXml
+
+     -project should not have web.xml
+     -project should use webservlet annotation
+     -create index.html to give link "Click me"
+     -create servlet with service method to print statement "in service method" after on console as well as on browser after clicking on link "click me"
+
+6.project name = ServletForm
+
+      -project should not contain web.xml file
+      -project should use webservlet annotation
+      -create index.html to create form (form should have name, email, submit btn)
+      -create servlet with service method to print form data on console as well as on browser after submitting form
+
+7.project name = GetPostDemo
+ 
+       -project should not contain web.xml file
+       -project should use webservlet annotations
+       -create index.html to create form(form should have name, email, password, submit btn)
+       -create servlet to print form data if data is matched to our hardcoaded value else print login failed on console as well as on browser 
+
+8.project name = ServletSendReuest
+
+       -project should not have web.xml
+       -projct should use webservlet annotation
+       -create index.html to create form(form should contain search textbox and search btn)
+       -create servlet to direct search request to google.com page
+
+9.project name = ServletRequestDispatcher
+
+       -project should not have web.xml
+       -project should use webservlet annotation
+       -create index.html to create form(form should contain email, password and login btn)
+       -create servlet to print form data 
+            -if data is matched to our hardcoaded data then  
+                -redirect to profile.jsp file and display welcome with our name
+            -if data not matched to our hardcoaded data then
+                -redirected to same page with message credentials not matched 
+       -note: use request dispatcher for page redirection
+
+10.project name = HttpSessionDemo
+
+         -project should not have web.xml
+         -project should use webservlet annotation
+         -create index.html to create form(form should contain email,password and submit btn)
+         -create servlet login.java will analyse requested data,
+            if data matched with our required data then redirect page to profile.jsp with message welcome name else redirect page to itself index.html with message "wrong credentials"
+         -create profile.jsp will display welcome name and contains 3 links home,about,logout
+         -create home.jsp will display welcome name and contains 2 links profile, about
+         -create about_us.jsp wil display welcome name and contains 2 links home,about
+         -create servlet logout will expire HTTP session after clicking on logout link of profile.jsp
+         -note: use http session to redirect pages to maintain state of object or value
+
+11.project name = JspDemo1 
+
+         -project should not have web.xml
+         -project should use webservlet annotation
+         -create index.jsp
+             it should print 
+                 -one statement "welcome to smart programming"
+                 -print name using java data type string
+                 -print length of string
+
+12.project name = ScriptingTagDemo
+         
+         -project should not have web.xml
+         -create index.jsp
+             it should print integer 10, method - square of 10, string ash, if condition, for loop, todayz date, random number
+         - Note : use 3 tags
+               1)declaration tag
+               2)scriptlet tag
+               3)expression tag
+
+13.project name = JspImplicitObjectDemo
+
+ 	 -project should not have web.xml
+         -create index.jsp
+              -print ash using scriptlet tag
+              -set session using scriptlet tag
+              -create form (contains name and "click me" btn)
+              -after clicking on Click me btn request should redirect to output.jsp
+         -create output.jsp 
+              -print name present inside index.html
+              -print session set inside index.html
+
+14.project name = ExpressionLanguageDemo
+ 
+          -project should not have web.xml
+          -create index.jsp
+              -print request parameter using expression language
+              -print session using expression language
+
+              -create form (contains name and click me btn)
+                  after clicking on click me btn, request will goes to output.jsp page
+
+          -create output.jsp 
+               print form name using expression language
+               print 10+5 using expression language
+
+15.project name = RegisterLogin
+
+         -project should not have web.xml
+          -create register.jsp
+               -create form(name, email, password, gender(radio), city(optionlist), register btn)
+               -after clicking on register, request wil go to servlet register.java
+          -create servlet register.java
+               -accept form data 
+               -establish jdbc connection
+               -insert query
+               -if data is inserted then
+                    print message = register successfully
+                    redirect request to register.jsp
+               -if data is not inserted then
+                   print message = user not registered due to some error
+                    redirect request to register.jsp
+               -write jdbc connection code inside try-catch block 
+                    inside catch block 
+                      -print message = excepion occured
+                      -redirect request to register.jsp
+           -----------------------------------------------------------------------------
+           -create login.jsp
+               -create a form(email,password,login btn)
+               -after clicking on login btn, request will redirect to servlet Login.java
+           -create servlet login.java
+               -accept form data
+               -establish jdbc connection
+               -select query
+               -if data matched then
+                   -pass columnname - name through httpsession to profile.jsp
+                if data not matched then
+                   -print message credentials not matched and redirect request to login.jsp
+               -keep jdbc connection logic inside try-cath block
+                    inside catch block
+                       - print exception message and redirect message to login.jsp
+                                                 
+
+     
+                                       
+
+     
